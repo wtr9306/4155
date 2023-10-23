@@ -1,3 +1,8 @@
+# node-modules folder
+DCPE/node_modules/
+# (just in case you accidentally install it twice)
+    node_modules/ 
+
 # Logs
 logs
 *.log

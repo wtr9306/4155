@@ -1,0 +1,25 @@
+{
+  "name": "capstone",
+  "version": "1.0.0",
+  "description": "Group 28 (Cookie Monsters) capstone project: DCPE webapp",
+  "main": "app.js",
+  "scripts": {
+    "test": "app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hazazz/4155.git"
+  },
+  "author": "Gregory Albert, Mustafa Ali, Jakob Allen, Walker Houston, Chase Logan, Lauren Mercer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hazazz/4155/issues"
+  },
+  "homepage": "https://github.com/hazazz/4155#readme",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "method-override": "^3.0.0",
+    "morgan": "^1.10.0"
+  }
+}

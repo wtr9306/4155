@@ -13,6 +13,8 @@ const myApp = myExpress()
 
 myApp.use( myExpress.static('public'))
 myApp.use( myExpress.urlencoded( { extended: true } ))
+
+myApp.set('view engine', 'ejs');
  
 /* 2. MIDDLEWARE:
 The app.js file is where you define the middleware functions (all 3rd-party plugins) that 
@@ -36,7 +38,7 @@ const userRoutes = require('./routes/userRoutes')
     // database and update periodically instead of pulling the data each time  
 
 myApp.use('/', mainRoutes)
-myApp.use('/users', userRoutes)
+// myApp.use('/users', userRoutes) DEPRECATED for now
 
 /* 4. ERROR HANDLING: 
 The app.js file is also where you define the error handling middleware for your application. 
@@ -68,6 +70,9 @@ myApp.use( (err, req, res, next)=>{
 /* 5. SERVER LISTENING: 
 Finally, the app.js file is where you start the server and 
 make it listen for incoming requests on a specific port.*/
+let myPort = 8084;
+let myHost = 'localhost';
+
 myApp.listen(myPort, myHost, ()=>{
     console.log('Server is running on port', myPort)
 })
