@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <title>Header</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+
+
+<body>
+
+    <header>
+        <nav>
+            <a href="/"><img src="/images/logo.png" alt="logo" class="logo-img"></a>
+            <span>
+                <!--if req.path is the same as this href pointer, its class=highlighted-h2 for styling-->
+                <a href="/"><h2 class="{{ request.path == '/' ? 'highlighted-h2' : '' }}">home</h2></a>
+                <a href="/about"><h2 class="{{ request.path == '/about' ? 'highlighted-h2' : '' }}">about</h2></a>
+                <a href="/contact"><h2 class="{{ request.path == '/contact' ? 'highlighted-h2' : '' }}">contact</h2></a>
+                <a href="/login"><h2 class="{{ request.path == '/login' ? 'highlighted-h2' : '' }}">login</h2></a>
+            </span>     
+        </nav>
+    </header>

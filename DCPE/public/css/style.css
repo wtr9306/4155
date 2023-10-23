@@ -1,0 +1,72 @@
+*{ /* universal selector, lowest priority in case of collision */
+    flex-shrink: 0; /*figma set this manually for most elements, leave it for a consistent look*/
+    
+    font-family: 'SF Pro Text', 'SF Pro Display', 'San Francisco', 'Arial', sans-serif;
+    color: black;
+    background: white;
+}
+
+/* header and footer only */
+header, footer{
+    width: 100%;
+}
+    h2{
+        display: inline;
+        color: white;
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+        .highlighted-h2{
+            color: #FF471B;
+        }
+
+/* header only */
+ nav{
+    height: 5rem;
+
+    fill: rgba(0, 0, 0, 0.90);
+    opacity: 0.85;
+}
+    nav span{
+        display: inline-flex;
+        align-items: flex-start;
+        gap: 1.8125rem;
+    }
+    .logo-img{
+        height: 100%;
+        width: auto; 
+    }
+
+/* body only */
+
+    /* index.ejs only */
+    .banner-img{
+        width: 100%;
+        height: auto;
+    }
+
+    /* OTHER PAGE-UNIQUE SELECTORS HERE */
+    
+
+/* footer only */
+footer{
+    height: 10.625rem;
+    
+    background: black
+}
+    footer .h2{
+        text-align: justify;
+        letter-spacing: 0.27rem;
+    }
+    .socials-container{
+        display: flex;
+        width: 16.5625rem;
+        justify-content: center;
+        align-items: center;
+        gap: 1.875rem;
+    }
+        .socials-icon{
+            width: 2.5rem;
+            height: 2.5rem;
+        }
