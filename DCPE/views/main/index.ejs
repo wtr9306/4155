@@ -1,12 +1,28 @@
 <%- include('../partials/header.ejs')%>
 
-    <figure>
-        <img src="/images/figma-chess.jpg" alt="A good move!" class="banner-img">
-   </figure>
+    <!-- The entirety of each page body is wrapped in a <div> for formatting.
+        See header and footer partials if you want details. 
+        It's better to wrap this code in a second div and assign it a new class than
+        editing the superclass div in the partials-->
 
-    <div class = "content">
-        <h3>Welcome to Jibber Jabber.</h3> 
-        <p>This is a place where you can share your exciting stories and read exciting stories from others.</p>
-    </div>
+    <figure class="overlay-all-children">
+        <img src="/images/figma-chess.jpg" alt="A good move!" class="banner-img">
+        <h2 class="centered-full opaque-black-bg">
+            helping you make<br>the right moves
+        </h2>
+    </figure>
+
+
+    <div>
+        <p class="text-shadow home-tag-line centered-horizontally">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> 
+        <div class="grid-container centered-horizontally">
+            <div class="grid-item-1">1</div>
+            <div class="grid-item-1">2</div>
+            <div class="grid-item-1">3</div>
+            <div class="grid-item-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl purus in mollis nunc sed id semper risus in. Lacinia at quis risus sed vulputate odio.</div>
+            <div class="grid-item-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Hac habitasse platea dictumst vestibulum rhoncus est pellentesque.</div>
+            <div class="grid-item-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Est ultricies integer quis auctor elit sed vulputate mi sit. Vitae elementum curabitur vitae nunc sed velit dignissim sodales ut. Non odio euismod lacinia at quis risus sed. Ut enim blandit volutpat maecenas volutpat blandit. JLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Est ultricies integer quis auctor elit sed vulputate mi sit. Vitae elementum curabitur vitae nunc sed velit dignissim sodales ut. Non odio euismod lacinia at quis risus sed. Ut enim blandit volutpat maecenas volutpat blandit. J</div>
+        </div>
+    </div>   
     
 <%- include('../partials/footer.ejs')%>

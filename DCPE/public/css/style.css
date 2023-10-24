@@ -1,61 +1,209 @@
+/* variables */
+:root{
+    --footer-height: 10.625rem;
+}
+
 *{ /* universal selector, lowest priority in case of collision */
-    flex-shrink: 0; /*figma set this manually for most elements, leave it for a consistent look*/
+    margin: 0;
+    position: relative;
     
-    font-family: 'SF Pro Text', 'SF Pro Display', 'San Francisco', 'Arial', sans-serif;
+    font-family: 'Inter', 'SF Pro Text', 'SF Pro Display', 'San Francisco', 'Arial', sans-serif;
     color: black;
-    background: white;
+}
+
+body, html {
+    min-height: 100vh;
+
+}
+
+/* inline formatting classes */
+.overlay-all-children{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+    .overlay-all-children > *{
+        grid-row-start: 1;
+        grid-column-start: 1;
+    }
+
+    /* Use these in conjunction with a wrapper class with overlay-all-children to simulate 
+        absolute positioning without disrupting workflow or wrapper size */
+    .centered-horizontally, .centered-vertically, 
+    .centered-full, .left-aligned, .right-aligned,
+    .top-aligned, .bottom-aligned{
+        display: block;
+    }    
+
+    .centered-horizontally, .centered-full{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .centered-vertically, .centered-full{
+        margin-top: auto;
+        margin-bottom: auto;
+    }   
+    .left-aligned{
+        margin-left: 0;
+        margin-right: auto;
+    }
+    .right-aligned{
+        margin-left: auto;
+        margin-right: 0;
+    }
+    .top-aligned{
+        margin-top: 0;
+    }
+    .bottom-aligned{
+        margin-top: auto;
+        margin-bottom: 0;
+    }
+
+    .front-layer{
+        z-index: 1;
+    }
+    .back-layer{
+        z-index: -1;
+    }
+
+/* block styling */
+.opaque-black-bg{
+    z-index: 2;
+    
+    background: rgba(0, 0, 0, 0.825);
+    backdrop-filter: blur(2px);
+}
+
+/* typography */
+.impressive-red-txt{
+    color: #FF471B;
+}
+
+.text-shadow{
+    text-align: justify;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+    /* h1 is section headers. Ex: "Contact" figma page */
+    /* h2 is subsection headers. Ex: "My Profile" figma page */
+    /* h3 is submission buttons. Ex: "Contact" figma page */
+    /* h4 is reserved for the bold text in header and footer */
+h1, h2, h3, h4{ 
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+}
+    h2, h4{ 
+        color: #FFF;
+    }
+    h3, h4{ 
+        font-size: 1.5rem;
+        text-transform: uppercase;
+    }
+
+p, ul, ol{
+    font-size: 1.25rem;
+    font-weight: 400;
 }
 
 /* header and footer only */
 header, footer{
     width: 100%;
 }
-    h2{
+    h4{
         display: inline;
-        color: white;
-        font-size: 1.5rem;
-        font-weight: 700;
-        text-transform: uppercase;
     }
-        .highlighted-h2{
-            color: #FF471B;
-        }
-
+    header .left-aligned, footer .left-aligned{
+        margin-left: 10rem;
+    }
+    header .right-aligned, footer .right-aligned{
+        margin-right: 5rem;
+    }
+        
 /* header only */
- nav{
+ header{
     height: 5rem;
-
-    fill: rgba(0, 0, 0, 0.90);
-    opacity: 0.85;
 }
-    nav span{
+    header > a{
+        height: inherit;
+    }
+        .logo-img{
+            height: inherit;
+            width: auto;
+        }
+    .nav{
         display: inline-flex;
         align-items: flex-start;
         gap: 1.8125rem;
     }
-    .logo-img{
-        height: 100%;
-        width: auto; 
+
+/* article only (between header and footer)*/
+article{ /* don't touch this */
+    height: 100%;
+    margin-bottom: calc(-1 * var(--footer-height)); 
+}
+    .push-footer{ /* don't touch this */
+        height: var(--footer-height);
     }
 
-/* body only */
-
-    /* index.ejs only */
+    /* GREG - index.ejs */
     .banner-img{
         width: 100%;
         height: auto;
     }
+        .banner-img ~ *{ /* select all next siblings */
+            width: fit-content;
+            padding: 5rem;
+            /* did padding instead
+            width: 58.125rem;
+            height: 16.9375rem;*/
+            
+            text-align: center;
+            font-family: 'Atkinson' 'Hyperlegible';
+            font-size: 5rem;
+            font-weight: 400;
+            text-transform: uppercase;
+
+            /* Greg: I added this, idk how I feel about it */
+            border-radius: 10px;
+        }
+    .home-tag-line{
+        padding: 2rem;
+        max-width: 46.25rem;
+    }
+    .grid-container {
+        padding: 2rem;
+        padding-top: 0;
+        width: fit-content;
+        display: grid;
+        gap: 1.25rem;
+        grid-template-rows: 22.5rem auto;
+        grid-template-columns: 18.5rem 18.5rem 18.5rem;
+    }
+        .grid-item-1{
+            background: #D9D9D9;
+        }
 
     /* OTHER PAGE-UNIQUE SELECTORS HERE */
-    
+        /* MUSTAFA */
+        /* JAKOB */
+        /* WALKER */
+        /* CHASE */
+        /* LAUREN */
 
 /* footer only */
 footer{
-    height: 10.625rem;
+    height: var(--footer-height);
+    position: relative;
+    clear: both;
     
     background: black
 }
-    footer .h2{
+    footer span{
+        width: fit-content;
+    }
+    footer span h4{
         text-align: justify;
         letter-spacing: 0.27rem;
     }

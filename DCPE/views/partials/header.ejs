@@ -10,16 +10,20 @@
 
 
 <body>
+    <article> <!-- everything that's not the footer-->
+        <div class="overlay-all-children"> <!-- everything that's not the footer and footer-push block-->
+            <header class="opaque-black-bg overlay-all-children">
+                
+                <a href="/"><img src="/images/logo.png" alt="logo" class="logo-img "></a>
 
-    <header>
-        <nav>
-            <a href="/"><img src="/images/logo.png" alt="logo" class="logo-img"></a>
-            <span>
-                <!--if req.path is the same as this href pointer, its class=highlighted-h2 for styling-->
-                <a href="/"><h2 class="{{ request.path == '/' ? 'highlighted-h2' : '' }}">home</h2></a>
-                <a href="/about"><h2 class="{{ request.path == '/about' ? 'highlighted-h2' : '' }}">about</h2></a>
-                <a href="/contact"><h2 class="{{ request.path == '/contact' ? 'highlighted-h2' : '' }}">contact</h2></a>
-                <a href="/login"><h2 class="{{ request.path == '/login' ? 'highlighted-h2' : '' }}">login</h2></a>
-            </span>     
-        </nav>
-    </header>
+                <nav class="right-aligned centered-vertically nav">
+                    <!--if req.path is the same as this href pointer, its class=impressive-red -->
+                    <a href="/"><h4 class="{% if request.path === '/' %}impressive-red-txt{% endif %}">home</h4></a>
+                    <a href="/about"><h4 class="{{ request.path === '/about' ? 'impressive-red-txt' : '' }}">about</h4></a>
+                    <a href="/contact"><h4 class="{{ request.path === '/contact' ? 'impressive-red-txt' : '' }}">contact</h4></a>
+                    <a href="/login"><h4 class="{{ request.path === '/login' ? 'impressive-red-txt' : '' }}">login</h4></a>
+                </nav>        
+
+            </header>
+
+            <div> <!-- everything between the header.ejs and footer.ejs partials-->
