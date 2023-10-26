@@ -3,7 +3,7 @@
     
     <head>
         <meta charset="UTF-8">
-        <title>Header</title>
+        <title>Dynamic Career Pathway Explorer</title>
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link rel="stylesheet" href="/css/style.css">
     </head>
@@ -18,10 +18,12 @@
 
                 <nav class="right-aligned centered-vertically nav">
                     <!--if req.path is the same as this href pointer, its class=impressive-red -->
-                    <a href="/"><h4 class="{% if request.path === '/' %}impressive-red-txt{% endif %}">home</h4></a>
-                    <a href="/about"><h4 class="{{ request.path === '/about' ? 'impressive-red-txt' : '' }}">about</h4></a>
-                    <a href="/contact"><h4 class="{{ request.path === '/contact' ? 'impressive-red-txt' : '' }}">contact</h4></a>
-                    <a href="/login"><h4 class="{{ request.path === '/login' ? 'impressive-red-txt' : '' }}">login</h4></a>
+                    <ul>
+                        <li><a href="/"><h4 class="{% if request.path === '/' %}impressive-red-txt{% endif %}">home</h4></a></li>
+                        <li><a href="/about"><h4 class="{{ request.path === '/about' ? 'impressive-red-txt' : '' }}">about</h4></a></li>
+                        <li><a href="/contact"><h4 class="{{ request.path === '/contact' ? 'impressive-red-txt' : '' }}">contact</h4></a></li>
+                        <li> <a href="/login"><h4 class="{{ request.path === '/login' ? 'impressive-red-txt' : '' }}">login</h4></a></li>
+                    </ul>
                 </nav>        
 
             </header>
